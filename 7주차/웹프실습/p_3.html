@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var num = prompt("출력할 구구단을 입력하세요 : ");
+      var size = 10;
+      var sum = adder(num);
+
+      function adder(number) {
+        var num = 0;
+        for (var i = 1; i < 10; i++) {
+          num += number * i;
+        }
+        return num;
+      }
+
+      for (var i = 1; i < 10; i++) {
+        document.write(
+          "<span style='font-size:" +
+            size +
+            "px'>" +
+            "7 * " +
+            num +
+            " = " +
+            num * i +
+            "<br></span>"
+        );
+        size += 5;
+      }
+      document.write(
+        "<hr><span style='font-size:45px'>각 구간별 결과값의 총합 : " + sum
+      );
+    </script>
+  </body>
+</html>

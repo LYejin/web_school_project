@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>기호로 표시된 border</h2>
+    <hr />
+    <script>
+      var rows = prompt("출력할 행 수를 입력하세요.");
+      var sign = prompt("연속적으로 기호를 4개 입력하세요");
+      var chars = sign.split("");
+      var char1 = chars[0];
+      var char2 = chars[1];
+      var char3 = chars[2];
+      var char4 = chars[3];
+      var num = rows - 2;
+
+      for (var i = 0; i < rows; i++) {
+        document.write(char1);
+      }
+
+      document.write("<br>");
+
+      for (var j = 0; j < num; j++) {
+        document.write(char2);
+        for (var k = 0; k < rows; k++) {
+          document.write("&nbsp;");
+        }
+        document.write(char3 + "<br>");
+      }
+
+      for (var i = 0; i < rows; i++) {
+        document.write(char4);
+      }
+    </script>
+  </body>
+</html>
