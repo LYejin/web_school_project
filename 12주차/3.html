@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function exam() {
+        var score = 0;
+        var qArray = document.getElementsByClassName("question");
+        var aArray = document.getElementsByClassName("answer");
+
+        for (i = 0; i < qArray.length; i++) {
+          var correctAnswer = eval(qArray[i].innerHTML);
+
+          if (correctAnswer == parseInt(aArray[i].value)) {
+            score += 10;
+          } else {
+            score += 0;
+            qArray[i].style.textDecorationLine = "line-through";
+          }
+        }
+
+        if (score == 40) {
+          document.getElementById("result").innerHTML =
+            score + "점 : 합격하셨습니다.";
+        } else {
+          document.getElementById("result").innerHTML = score + "점";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>치매 예방 프로그램</h2>
+    <hr />
+    <table>
+      <tr>
+        <td>
+          <span name="question">5*6</span>
+        </td>
+        <td>
+          <input type="text" name="answer" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span name="question">7+5*3</span>
+        </td>
+        <td>
+          <input type="text" name="answer" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span name="question">23*2</span>
+        </td>
+        <td>
+          <input type="text" name="answer" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span name="question">35-7</span>
+        </td>
+        <td>
+          <input type="text" name="answer" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="채점" onclick="exam()" />
+        </td>
+        <td>
+          <span id="result"></span>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function exam() {
+        // 해당 input의 value를 가져오기
+        var value1 = document.getElementById("ex1");
+        var value2 = document.getElementById("ex2");
+        var value3 = document.getElementById("ex3");
+        var value4 = document.getElementById("ex4");
+        var score = 0;
+        if (30 == value1.value) {
+          score += 10;
+        } else {
+          var style1 = document.getElementById("style1");
+          style1.style.textDecorationLine = "line-through";
+        }
+        if (22 == value2.value) {
+          score += 10;
+        } else {
+          var style2 = document.getElementById("style2");
+          style2.style.textDecorationLine = "line-through";
+        }
+        if (46 == value3.value) {
+          score += 10;
+        } else {
+          var style3 = document.getElementById("style3");
+          style3.style.textDecorationLine = "line-through";
+        }
+        if (28 == value4.value) {
+          score += 10;
+        } else {
+          var style4 = document.getElementById("style4");
+          style4.style.textDecorationLine = "line-through";
+        }
+        var result = document.getElementById("result");
+        if (score == 40) {
+          result.innerHTML += score + "점 : 합격하셨습니다";
+        } else {
+          result.innerHTML += score + "점";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>치매 예방 프로그램</h2>
+    <hr />
+    <table>
+      <tr>
+        <td>
+          <span id="style1">5*6</span>
+        </td>
+        <td>
+          <input type="text" id="ex1" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span id="style2">7+5*3</span>
+        </td>
+        <td>
+          <input type="text" id="ex2" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span id="style3">23*2</span>
+        </td>
+        <td>
+          <input type="text" id="ex3" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span id="style4">35-7</span>
+        </td>
+        <td>
+          <input type="text" id="ex4" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input type="button" value="채점" onclick="exam()" />
+        </td>
+        <td>
+          <span id="result"></span>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
